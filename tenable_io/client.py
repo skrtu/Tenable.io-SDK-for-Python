@@ -51,6 +51,7 @@ class TenableIOClient(object):
 
     def __init__(
             self,
+            proxies = { 'http': TenableIOConfig.get('http_proxy'), 'https': TenableIOConfig.get('https_proxy'), 'no': TenableIOConfig.get('no_proxy') }
             access_key=TenableIOConfig.get('access_key'),
             secret_key=TenableIOConfig.get('secret_key'),
             endpoint=TenableIOConfig.get('endpoint'),
@@ -60,6 +61,8 @@ class TenableIOClient(object):
         self._secret_key = secret_key
         self._endpoint = endpoint
         self._impersonate = impersonate
+        # specify proxies via { 'http': 'http://proxy:port', 'https': 'https://prxy:port', 'no': '127.0.0.1,192.168.1.0/24' }
+        self._proxies = proxies
 
         self._init_session()
         self._init_api()
@@ -70,6 +73,7 @@ class TenableIOClient(object):
         Initializes the requests session
         """
         self._session = requests.Session()
+        self._session.proxies.update(self._proxies)
         self._session.headers.update({
             u'X-ApiKeys': u'accessKey=%s; secretKey=%s;' % (self._access_key, self._secret_key),
             u'User-Agent': u'TenableIOSDK Python/%s' % ('.'.join([str(i) for i in sys.version_info][0:3]))
