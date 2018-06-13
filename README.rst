@@ -51,7 +51,7 @@ INI File
 Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^
 
-TenableIOClient looks for the environment variables ``TENABLEIO_ACCESS_KEY``, ``TENABLEIO_SECRET_KEY`, ``HTTP_PROXY``, ``HTTTPS_PROXY``, and ``NO_PROXY``. If no proxy variable is set via either config or passing it, it will be set to blank for all three.
+TenableIOClient looks for the environment variables ``TENABLEIO_ACCESS_KEY``, ``TENABLEIO_SECRET_KEY`, ``HTTP_PROXY``, ``HTTPS_PROXY``, and ``NO_PROXY``. If no proxy variable is set via either config or passing it, it will be set to blank for all three.
 
 Python Version
 --------------
