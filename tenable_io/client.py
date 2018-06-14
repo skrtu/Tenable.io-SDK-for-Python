@@ -53,7 +53,7 @@ class TenableIOClient(object):
             self,
             proxies={'http': TenableIOConfig.get('http_proxy'),
                      'https': TenableIOConfig.get('https_proxy'),
-                     'no': TenableIOConfig.get('no_proxy')}
+                     'no': TenableIOConfig.get('no_proxy')},
             access_key=TenableIOConfig.get('access_key'),
             secret_key=TenableIOConfig.get('secret_key'),
             endpoint=TenableIOConfig.get('endpoint'),
