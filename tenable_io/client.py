@@ -63,7 +63,8 @@ class TenableIOClient(object):
         self._secret_key = secret_key
         self._endpoint = endpoint
         self._impersonate = impersonate
-        # specify proxies via { 'http': 'http://proxy:port', 'https': 'https://prxy:port', 'no': '127.0.0.1,192.168.1.0/24' }
+        # specify proxies via 
+        # { 'http': 'http://proxy:port', 'https': 'https://prxy:port', 'no': '127.0.0.1' }
         self._proxies = proxies
 
         self._init_session()
